@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-
+:root{
+    --animationState: paused;
+}
 * {
     /* padding: 0;
     margin: 0; */
@@ -115,15 +117,16 @@ button {
 
 button::before{
     content: "";
-    width: var(--dynamic-width);
+    width: 0;
     height: 100%;
     position: absolute;
     background-color: rgba(0, 183, 255, 0.338);
     top: 0;
     left: 0;
     /* transition: width 700ms ease-in; */
-    animation: mymove 5s infinite;
-    animation-play-state: paused;
+    animation: mymove 1s;
+    animation-play-state: var(--animationState);
+    /* animation-iteration-count: 1; */
 
 }
 
