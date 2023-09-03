@@ -16,31 +16,56 @@ body {
 .main{
     background-color: #fafafa;
     transform-origin: top left;
-    transition: transform 0.5s linear;
     width: 100vw;
     min-height: 100vh;
     padding: 50px;
+
+    transition: transform 0.5s linear;
 }
 
 .main.show-nav {
     transform: rotate(-20deg);
 }
 
+
+
+.main::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: transparent;
+    transition:  background-color 0.5s ease-in-out;
+}
+.main.show-nav::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(100, 99, 99, 0.767);
+    transition:  background-color 0.5s ease-in-out;
+}
+
 .circle-container {
     position: fixed;
     top: -100px;
     left: -100px;
+    z-index: 99;
 }
 
 
 .circle {
-    background-color: #ff7979;
+    background-color: #116efa;
     height: 200px;
     width: 200px;
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s linear;
 }
+
+
 
 .main.show-nav .circle {
     transform: rotate(-70deg);
@@ -95,7 +120,7 @@ nav ul li {
     color: #fff;
     margin: 40px 0;
     transform: translateX(-100%);
-    transition: transform 0.4s ease-in;
+    transition: transform 0.2s ease-in;
 }
 
 nav ul li i {
@@ -116,7 +141,7 @@ nav ul li+li+li {
 nav a {
     color: #fafafa;
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 100ms;
 }
 
 nav a:hover {
@@ -132,6 +157,8 @@ nav a:hover {
 .content {
     max-width: 1000px;
     margin: 50px auto;
+    /* background-color:transparent */
+    
 }
 
 .content h1 {
